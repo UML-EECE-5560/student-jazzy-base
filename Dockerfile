@@ -30,6 +30,12 @@ WORKDIR /ros_ws
 RUN . /class_ws/install/setup.sh && colcon build --symlink-install
 
 USER $USERNAME
+
+# setup entrypoint
+COPY ./ros_entrypoint.sh /
+
+ENTRYPOINT ["/ros_entrypoint.sh"]
+
 CMD ["/bin/bash"]
 
 ######### SOURCES:

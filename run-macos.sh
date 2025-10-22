@@ -10,4 +10,4 @@ docker run -it --rm \
   --volume="$XAUTH:$XAUTH" \
   -v ./src:/ros_ws/src/student_src \
   --privileged \
-${dirname}
+${dirname} $@
